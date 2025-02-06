@@ -1,0 +1,26 @@
+# service.yaml definition 
+# This file will create a service that will route traffic to the pods that have the label app: gke-app 
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: gke-service
+spec:
+  selector:
+    app: gke-app
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+
+# kind  - the kind of resource we want to create
+# metadata - name to the service we are deploying
+# spec - the specification of the service
+  # selector - the label that the service will use to select the pods it will route traffic to
+    # app - the label that the service will use to select the pods it will route traffic to
+  # type - the type of service we are creating
+  # ports - the port configuration for the service
+    # protocol - the protocol that the service will use
+    # port - the port that the service will listen on
+    # targetPort - the port that the service will route traffic to 
