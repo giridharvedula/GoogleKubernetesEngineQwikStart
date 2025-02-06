@@ -7,6 +7,9 @@ gcloud container clusters create \
 # --machine-type is the type of machine we want to use for the cluster
 # --zone is the zone where we want to create the cluster
 
+# verify the cluster with below gcloud cli
+gcloud container clusters list
+
 # to get the credentials of the cluster we use the gcloud container cluster get-credentials command
 gcloud container clusters \
 	get-credentials ClusterName
