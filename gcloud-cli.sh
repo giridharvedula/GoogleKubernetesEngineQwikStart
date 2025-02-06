@@ -9,3 +9,4 @@ gcloud config set compute/region “REGION”
 
 # set the given zone 
 gcloud config set compute/zone “ZONE” 
+

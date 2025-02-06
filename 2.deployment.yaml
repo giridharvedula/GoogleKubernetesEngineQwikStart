@@ -4,9 +4,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gke-app
+  name: gke-app 
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: gke-app
@@ -17,16 +17,10 @@ spec:
     spec:
       containers:
         - name: gke-app
-          image: ImageUrl
+          image: gcr.io/google-samples/hello-app:1.0
           resources:
-            limits:
-              memory: "512Mi"
-              cpu: "500m"
-            requests:
-              memory: "256Mi"
-              cpu: "250m"
           ports:
-            - containerPort: 80
+            - containerPort: 8080
             
 # kind - the kind of resource we want to create
 # metadata - name to the deployment we are deploying 
