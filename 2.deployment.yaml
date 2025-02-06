@@ -1,4 +1,6 @@
 # deployment.yaml definition 
+# This file will create a deployment that will create two pods that will run the gke-app container
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -26,3 +28,25 @@ spec:
           ports:
             - containerPort: 80
             
+# kind - the kind of resource we want to create
+# metadata - name to the deployment we are deploying 
+# spec - the specification of the deployment
+  # replicas - the number of pods we want to create
+  # selector - the label that the deployment will use to select the pods it will manage
+    # matchLabels - the label that the deployment will use to select the pods it will manage
+  # template - the template for the pods that will be created
+    # metadata - the metadata for the pods that will be created
+      # labels - the labels for the pods that will be created
+        # app - the label that the deployment will use to select the pods it will manage
+    # spec - the specification for the pods that will be created
+      # containers - the containers that will run in the pods
+        # name - the name of the container
+        # image - the image that the container will run
+        # resources - the resource limits and requests for the container
+          # limits - the resource limits for the container
+            # memory - the memory limit for the container
+            # cpu - the CPU limit for the container
+          # requests - the resource requests for the container
+            # memory - the memory request for the container
+            # cpu - the CPU request for the container
+        # ports - the ports that the container will expose
